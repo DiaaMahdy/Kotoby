@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kotoby/constants.dart';
-
-import 'features/splash/presentation/views/splash_view.dart';
+import 'package:kotoby/core/utils/app_routes.dart';
 
 void main() {
   runApp(const Kotoby());
@@ -14,7 +12,8 @@ class Kotoby extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRoutes.router,
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: kPrimaryColor,
@@ -22,7 +21,6 @@ class Kotoby extends StatelessWidget {
           ThemeData.dark().textTheme,
         ),
       ),
-      home: const SplashView(),
     );
   }
 }

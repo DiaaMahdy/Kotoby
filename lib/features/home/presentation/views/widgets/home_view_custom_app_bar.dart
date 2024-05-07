@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kotoby/core/utils/assets.dart';
 
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+class HomeViewCustomAppBar extends StatelessWidget {
+  const HomeViewCustomAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {

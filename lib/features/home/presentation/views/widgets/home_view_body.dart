@@ -3,7 +3,7 @@ import 'package:kotoby/core/utils/styles.dart';
 import 'package:kotoby/features/home/presentation/views/widgets/featured_list_view.dart';
 
 import 'best_seller_list_view.dart';
-import 'custom_app_bar.dart';
+import 'home_view_custom_app_bar.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -16,7 +16,7 @@ class HomeViewBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomAppBar(),
+              HomeViewCustomAppBar(),
               FeaturedListView(),
               SizedBox(
                 height: 24,
