@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:kotoby/core/utils/assets.dart';
 
 class HomeViewCustomAppBar extends StatelessWidget {
@@ -21,11 +22,14 @@ class HomeViewCustomAppBar extends StatelessWidget {
             height: 19,
           ),
           IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.search,
-                size: 26,
-              ))
+            onPressed: () {
+              GoRouter.of(context).push('/searchView');
+            },
+            icon: const Icon(
+              Icons.search,
+              size: 26,
+            ),
+          ),
         ],
       ),
     );

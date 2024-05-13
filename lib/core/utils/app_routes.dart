@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:kotoby/features/home/presentation/views/book_details_view.dart';
 import 'package:kotoby/features/home/presentation/views/home_view.dart';
+import 'package:kotoby/features/search/presentation/views/search_view.dart';
 import 'package:kotoby/features/splash/presentation/views/splash_view.dart';
 
 abstract class AppRoutes {
@@ -16,6 +17,10 @@ abstract class AppRoutes {
     GoRoute(
       path: '/bookDetailsView',
       builder: (context, state) => const BookDetailsView(),
+    ),
+    GoRoute(
+      path: '/searchView',
+      builder: (context, index) => const SearchView(),
     ),
   ]);
 }
