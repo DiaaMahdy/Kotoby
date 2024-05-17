@@ -14,7 +14,9 @@ class BookDetailsListView extends StatelessWidget {
           itemBuilder: (context, index) {
             return const Padding(
               padding: EdgeInsets.symmetric(horizontal: 5),
-              child: CustomBookImage(),
+              child: CustomBookImage(
+                imageUrl: 'https://images.app.goo.gl/AWEgJV4GRvpuVE4y9',
+              ),
             );
           }),
     );
