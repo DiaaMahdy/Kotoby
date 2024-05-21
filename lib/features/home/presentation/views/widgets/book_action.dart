@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:kotoby/core/utils/functions/launch_url.dart';
 import 'package:kotoby/core/widgets/custom_button.dart';
+import 'package:kotoby/features/home/data/models/book_model/book_model.dart';
 
 class BookAction extends StatelessWidget {
-  const BookAction({super.key});
+  const BookAction({super.key, required this.bookModel});
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8.0),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Row(
         children: [
-          Expanded(
+          const Expanded(
             child: CustomButton(
               text: 'Free',
               backgroundColor: Colors.white,
@@ -23,11 +26,14 @@ class BookAction extends StatelessWidget {
           ),
           Expanded(
             child: CustomButton(
+              onPressed: () {
+                launchCustomUrl(context, bookModel.volumeInfo.previewLink);
+              },
               fontSize: 16,
-              text: 'Preview',
-              backgroundColor: Color(0xffef8262),
+              text: getText(bookModel),
+              backgroundColor: const Color(0xffef8262),
               textColor: Colors.white,
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topRight: Radius.circular(16),
                 bottomRight: Radius.circular(16),
               ),
@@ -36,5 +42,13 @@ class BookAction extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  String getText(BookModel bookModel) {
+    if (bookModel.volumeInfo.previewLink == null) {
+      return 'Not available';
+    } else {
+      return 'Preview';
+    }
   }
 }
